@@ -1,0 +1,21 @@
+namespace:
+  name: prod
+ 
+image:
+  repository: nginx
+  tag: 1.17.0
+  pullPolicy: IfNotPresent
+
+service:
+    type: ClusterIP
+    port: 80
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 70m
+    memory: 256Mi
+
+configmap:
+  data: "version: 1.17.0"
